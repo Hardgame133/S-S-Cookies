@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S&S Cookies — Cookies Artesanais Premium | Peça Agora</title>
+  <meta name="description" content="Cookies artesanais premium da S&S Cookies. 8 sabores exclusivos feitos com ingredientes selecionados. Peça pelo WhatsApp e receba em casa!">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://sscookies.com.br/">
+  
+  <meta property="og:title" content="S&S Cookies — Cada mordida é uma experiência única">
+  <meta property="og:description" content="Cookies artesanais premium com 8 sabores exclusivos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sscookies.com.br/">
+  <meta property="og:image" content="https://image.qwenlm.ai/public_source/eca4b3bb-c54d-4003-8e57-cf1ff110349a/18a95b5a0-4b06-43ea-a35b-80532411c966.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="theme-color" content="#C0573B">
+  
+  <!-- FAVICON -->
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg">
+  <link rel="apple-touch-icon" href="public/favicon.svg">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/playfair-display@5.1.0/700.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/playfair-display@5.1.0/600.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.1.0/400.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.1.0/600.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.1.0/700.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "S&S Cookies",
+    "description": "Cookies artesanais premium feitos com ingredientes selecionados.",
+    "url": "https://sscookies.com.br/",
+    "logo": "https://sscookies.com.br/logo.png",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Porto Alegre",
+      "addressRegion": "RS",
+      "addressCountry": "BR"
+    },
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Catálogo de Cookies",
+      "hasMenuItem": [
+        { "@type": "MenuItem", "name": "Tradicional", "description": "Massa amanteigada com gotas de chocolate 70%" },
+        { "@type": "MenuItem", "name": "Pistache", "description": "Recheado com creme de pistache artesanal" }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#cardapio" class="skip-link">Pular para o cardápio</a>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-logo">
+        <span class="navbar-logo-brand">S&S</span>
+        <span class="navbar-logo-sub">Cookies</span>
+      </a>
+      
+      <nav class="navbar-links" aria-label="Navegação principal">
+        <a href="#cardapio" class="navbar-link">Cardápio</a>
+        <a href="#como-funciona" class="navbar-link">Como Funciona</a>
+        <a href="#depoimentos" class="navbar-link">Depoimentos</a>
+        <a href="#encomendas" class="navbar-link">Encomendas</a>
+        <a href="#faq" class="navbar-link">Dúvidas</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <button id="theme-toggle" class="theme-toggle" title="Alternar tema">
+          <i data-lucide="moon" class="moon-icon"></i>
+          <i data-lucide="sun" class="sun-icon"></i>
+        </button>
+        <a href="https://api.whatsapp.com/send/?phone=5551989317331&text=Olá! Gostaria de fazer um pedido." class="btn btn-primary btn-sm" target="_blank">
+          <i data-lucide="message-circle"></i> Pedir Agora
+        </a>
+      </div>
+
+      <button class="navbar-hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu-overlay" id="mobile-overlay"></div>
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" aria-label="Fechar menu">
+      <i data-lucide="x"></i>
+    </button>
+    <a href="#cardapio" class="mobile-menu-link">Cardápio</a>
+    <a href="#como-funciona" class="mobile-menu-link">Como Funciona</a>
+    <a href="#depoimentos" class="mobile-menu-link">Depoimentos</a>
+    <a href="#encomendas" class="mobile-menu-link">Encomendas</a>
+    <a href="#faq" class="mobile-menu-link">Dúvidas</a>
+    <div class="mobile-menu-cta">
+      <a href="https://api.whatsapp.com/send/?phone=5551989317331&text=Olá! Gostaria de fazer um pedido." class="btn btn-primary btn-block" target="_blank">
+        <i data-lucide="message-circle"></i> Pedir pelo WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <i data-lucide="star"></i>
+              <span>Os Melhores Cookies da Região</span>
+            </div>
+            <h1 class="hero-headline">Cada mordida é uma experiência única.</h1>
+            <p class="hero-subheadline">Cookies artesanais premium, feitos com paixão. Do forno direto para sua casa.</p>
+            <div class="hero-ctas">
+              <a href="#cardapio" class="btn btn-primary">Ver Cardápio</a>
+              <a href="#como-funciona" class="btn btn-outline">Como Pedir</a>
+            </div>
+            <div class="hero-rating">
+              <div class="hero-stars" id="rating-trigger">★★★★★</div>
+              <span id="rating-text">4.9/5 (2.147+ avaliações)</span>
+            </div>
+          </div>
+          <div class="hero-image" id="hero-img-trigger">
+            <img src="https://image.qwenlm.ai/public_source/eca4b3bb-c54d-4003-8e57-cf1ff110349a/18a95b5a0-4b06-43ea-a35b-80532411c966.png" alt="Cookies Artesanais S&S Cookies" width="1200" height="800">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="social-proof">
+      <div class="container">
+        <p class="social-proof-text">Por que escolher S&S Cookies?</p>
+        <div class="social-proof-badges">
+          <div class="proof-badge" id="badge-artesanal">
+            <i data-lucide="heart"></i>
+            <span>100% Artesanal</span>
+          </div>
+          <div class="proof-badge" id="badge-premium">
+            <i data-lucide="gem"></i>
+            <span>Ingredientes Premium</span>
+          </div>
+          <div class="proof-badge" id="badge-entrega">
+            <i data-lucide="truck"></i>
+            <span>Entrega Rápida</span>
+          </div>
+          <div class="proof-badge" id="badge-avaliacao">
+            <i data-lucide="thumbs-up"></i>
+            <span>Satisfação Garantida</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLAVORS -->
+    <section class="flavors" id="cardapio">
+      <div class="container">
+        <h2 class="section-heading">Nossos Sabores Irresistíveis</h2>
+        <p class="section-subheading">Oito combinações exclusivas criadas para satisfazer os paladares mais exigentes.</p>
+        
+        <div class="flavors-grid">
+          <!-- Tradicional -->
+          <article class="flavor-card" onclick="openFlavorDetail(this, 'tradicional')">
+            <div class="flavor-card-image">
+              <span class="flavor-card-tag badge-primary">Clássico</span>
+              <img src="https://image.qwenlm.ai/public_source/eca4b3bb-c54d-4003-8e57-cf1ff110349a/132cb3571-674a-431d-9946-5fa256fcac44.png" alt="Cookie Tradicional" loading="lazy">
+              <button class="cookie-gift-btn" onclick="event.stopPropagation(); openMothersDayQuote('tradicional')" title="Mensagem de Dia das Mães">
+                <i data-lucide="cookie"></i>
+              </button>
+            </div>
+            <div class="flavor-card-body">
+              <h3 class="flavor-card-name">Tradicional</h3>
+              <p class="flavor-card-desc">Massa amanteigada com gotas generosas de chocolate meio amargo 70% cacau.</p>
+              <div class="flavor-card-footer">
+                <span class="flavor-card-price">R$ 10,00</span>
+                <span class="flavor-card-btn">Ver Detalhes</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Pistache -->
+          <article class="flavor-card" onclick="openFlavorDetail(this, 'pistache')">
+            <div class="flavor-card-image">
+              <span class="flavor-card-tag badge-popular">🔥 Mais Vendido</span>
+              <img src="https://image.qwenlm.ai/public_source/eca4b3bb-c54d-4003-8e57-cf1ff110349a/17066a2a6-bf08-4aaf-9d04-43e0d79a54bb.png" alt="Cookie de Pistache" loading="lazy">
+              <button class="cookie-gift-btn" onclick="event.stopPropagation(); openMothersDayQuote('pistache')" title="Mensagem de Dia das Mães">
+                <i data-lucide="cookie"></i>
+              </button>
+            </div>
+            <div class="flavor-card-body">
+              <h3 class="flavor-card-name">Pistache</h3>
+              <p class="flavor-card-desc">Recheado com creme de pistache siciliano e pedaços de pistache torrado.</p>
+              <div class="flavor-card-footer">
+                <span class="flavor-card-price">R$ 14,00</span>
+                <span class="flavor-card-btn">Ver Detalhes</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Chocolate -->
+          <article class="flavor-card" onclick="openFlavorDetail(this, 'chocolate')">
+            <div class="flavor-card-image">
+              <span class="flavor-card-tag badge-premium">Premium</span>
+              <img src="https://image.qwenlm.ai/public_source/eca4b3bb-c54d-4003-8e57-cf1ff110349a/1a1c13085-9321-45ca-9bdf-4e34d0860825.png" alt="Cookie de Chocolate" loading="lazy">
+              <button class="cookie-gift-btn" onclick="event.stopPropagation(); openMothersDayQuote('chocolate')" title="Mensagem de Dia das Mães">
+                <i data-lucide="cookie"></i>
+              </button>
+            </div>
+            <div class="flavor-card-body">
+              <h3 class="flavor-card-name">Chocolate</h3>
+              <p class="flavor-card-desc">Cacau belga na massa com chunks de chocolate ao leite e meio amargo.</p>
+              <div class="flavor-card-footer">
+                <span class="flavor-card-price">R$ 12,00</span>
+                <span class="flavor-card-btn">Ver Detalhes</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Red Velvet -->
+          <article class="flavor-card" onclick="openFlavorDetail(this, 'red-velvet')">
+            <div class="flavor-card-image">
+              <span class="flavor-card-tag badge-new">Novo</span>
+              <img src="https://image.qwenlm.ai/public_source/eca4b3bb-c54d-4003-8e57-cf1ff110349a/19217130b-cebd-4c69-9283-222420974068.png" alt="Cookie Red Velvet" loading="lazy">
+              <button class="cookie-gift-btn" onclick="event.stopPropagation(); openMothersDayQuote('red-velvet')" title="Mensagem de Dia das Mães">
+                <i data-lucide="cookie"></i>
+              </button>
+            </div>
+            <div class="flavor-card-body">
+              <h3 class="flavor-card-name">Red Velvet</h3>
+              <p class="flavor-card-desc">Cor vibrante com recheio cremoso de cream cheese frosting artesanal.</p>
+              <div class="flavor-card-footer">
+                <span class="flavor-card-price">R$ 13,00</span>
+                <span class="flavor-card-btn">Ver Detalhes</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Avelã -->
+          <article class="flavor-card" onclick="openFlavorDetail(this, 'avela')">
+            <div class="flavor-card-image">
+              <span class="flavor-card-tag badge-primary">Artesanal</span>
+              <img src="https://image.qwenlm.ai/public_source/eca4b3bb-c54d-4003-8e57-cf1ff110349a/16bc32ec1-8600-4de3-bba6-1a765270b2a0.png" alt="Cookie de Avelã" loading="lazy">
+              <button class="cookie-gift-btn" onclick="event.stopPropagation(); openMothersDayQuote('avela')" title="Mensagem de Dia das Mães">
+                <i data-lucide="cookie"></i>
+              </button>
+            </div>
+            <div class="flavor-card-body">
+              <h3 class="flavor-card-name">Avelã</h3>
+              <p class="flavor-card-desc">Creme de avelã artesanal e pedaços de avelã piemontesa caramelizada.</p>
+              <div class="flavor-card-footer">
+                <span class="flavor-card-price">R$ 14,00</span>
+                <span class="flavor-card-btn">Ver Detalhes</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Brigadeiro -->
+          <article class="flavor-card" onclick="openFlavorDetail(this, 'brigadeiro')">
+            <div class="flavor-card-image">
+              <span class="flavor-card-tag badge-primary">Brasileiro</span>
+              <img src="https://image.qwenlm.ai/public_source/eca4b3bb-c54d-4003-8e57-cf1ff110349a/1b5179d17-c3c7-410d-a68a-3ca319632d84.png" alt="Cookie de Brigadeiro" loading="lazy">
+              <button class="cookie-gift-btn" onclick="event.stopPropagation(); openMothersDayQuote('brigadeiro')" title="Mensagem de Dia das Mães">
+                <i data-lucide="cookie"></i>
+              </button>
+            </div>
+            <div class="flavor-card-body">
+              <h3 class="flavor-card-name">Brigadeiro</h3>
+              <p class="flavor-card-desc">Recheio cremoso de brigadeiro gourmet feito com chocolate belga.</p>
+              <div class="flavor-card-footer">
+                <span class="flavor-card-price">R$ 12,00</span>
+                <span class="flavor-card-btn">Ver Detalhes</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Full Choco -->
+          <article class="flavor-card" onclick="openFlavorDetail(this, 'full-choco')">
+            <div class="flavor-card-image">
+              <span class="flavor-card-tag badge-premium">Premium</span>
+              <img src="https://image.qwenlm.ai/public_source/eca4b3bb-c54d-4003-8e57-cf1ff110349a/15a38f7fd-f9e5-46f5-903c-5c2c9622f28a.png" alt="Cookie Full Choco" loading="lazy">
+              <button class="cookie-gift-btn" onclick="event.stopPropagation(); openMothersDayQuote('full-choco')" title="Mensagem de Dia das Mães">
+                <i data-lucide="cookie"></i>
+              </button>
+            </div>
+            <div class="flavor-card-body">
+              <h3 class="flavor-card-name">Full Choco</h3>
+              <p class="flavor-card-desc">Experiência triplo chocolate: massa, recheio de ganache e cobertura.</p>
+              <div class="flavor-card-footer">
+                <span class="flavor-card-price">R$ 15,00</span>
+                <span class="flavor-card-btn">Ver Detalhes</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Craqueladas -->
+          <article class="flavor-card" onclick="openFlavorDetail(this, 'craqueladas')">
+            <div class="flavor-card-image">
+              <span class="flavor-card-tag badge-new">Exclusivo</span>
+              <img src="https://image.qwenlm.ai/public_source/eca4b3bb-c54d-4003-8e57-cf1ff110349a/12b3cf5fb-fcf2-4037-ac06-a33bcc84578b.png" alt="Cookie Craquelado" loading="lazy">
+              <button class="cookie-gift-btn" onclick="event.stopPropagation(); openMothersDayQuote('craqueladas')" title="Mensagem de Dia das Mães">
+                <i data-lucide="cookie"></i>
+              </button>
+            </div>
+            <div class="flavor-card-body">
+              <h3 class="flavor-card-name">Craqueladas</h3>
+              <p class="flavor-card-desc">Textura única com massa crocante por fora e macia por dentro, finalizada com crosta de açúcar.</p>
+              <div class="flavor-card-footer">
+                <span class="flavor-card-price">R$ 11,00</span>
+                <span class="flavor-card-btn">Ver Detalhes</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" id="como-funciona">
+      <div class="container">
+        <h2 class="section-heading">Como Funciona</h2>
+        <p class="section-subheading">Pedir seus cookies é simples e rápido. Siga os passos abaixo:</p>
+        
+        <div class="steps-container">
+          <div class="step" onclick="openStepDetail(1)">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Escolha seus Sabores</h3>
+              <p>Navegue pelo cardápio e escolha seus favoritos ou nossas caixas mistas.</p>
+            </div>
+          </div>
+          <div class="step" onclick="openStepDetail(2)">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Faça seu Pedido</h3>
+              <p>Chame-nos no WhatsApp. Confirmamos tudo e agendamos a entrega.</p>
+            </div>
+          </div>
+          <div class="step" onclick="openStepDetail(3)">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Receba em Casa</h3>
+              <p>Seus cookies chegam frescos e perfumados, prontos para degustar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="depoimentos">
+      <div class="container">
+        <h2 class="section-heading">O que dizem nossos clientes</h2>
+        <p class="section-subheading">A felicidade em forma de cookie, comprovada por quem já experimentou.</p>
+        
+        <div class="marquee-container">
+          <div class="marquee-track">
+            <!-- Maria S. -->
+            <div class="testimonial-card" onclick="openTestimonialDetail(0)">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"Melhor cookie que já comi na vida! O de pistache é surreal, e a entrega foi super rápida."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">MS</div>
+                <div class="testimonial-info"><p class="testimonial-name">Maria S.</p></div>
+              </div>
+            </div>
+            <!-- Rafael O. -->
+            <div class="testimonial-card" onclick="openTestimonialDetail(1)">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"Comprei para o aniversário da minha esposa e ela amou! A apresentação é linda."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">RO</div>
+                <div class="testimonial-info"><p class="testimonial-name">Rafael O.</p></div>
+              </div>
+            </div>
+            <!-- Ana C. -->
+            <div class="testimonial-card" onclick="openTestimonialDetail(2)">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"Encomendei para um evento corporativo e foi um sucesso absoluto. Todos elogiaram!"</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">AC</div>
+                <div class="testimonial-info"><p class="testimonial-name">Ana C.</p></div>
+              </div>
+            </div>
+            <!-- Pedro L. -->
+            <div class="testimonial-card" onclick="openTestimonialDetail(3)">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"O Full Choco é de outro mundo. Massa crocante, recheio cremoso... perfeito!"</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">PL</div>
+                <div class="testimonial-info"><p class="testimonial-name">Pedro L.</p></div>
+              </div>
+            </div>
+            <!-- Duplicate for Seamless Loop -->
+            <div class="testimonial-card" onclick="openTestimonialDetail(0)">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"Melhor cookie que já comi na vida! O de pistache é surreal, e a entrega foi super rápida."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">MS</div>
+                <div class="testimonial-info"><p class="testimonial-name">Maria S.</p></div>
+              </div>
+            </div>
+            <div class="testimonial-card" onclick="openTestimonialDetail(1)">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"Comprei para o aniversário da minha esposa e ela amou! A apresentação é linda."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">RO</div>
+                <div class="testimonial-info"><p class="testimonial-name">Rafael O.</p></div>
+              </div>
+            </div>
+            <div class="testimonial-card" onclick="openTestimonialDetail(2)">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"Encomendei para um evento corporativo e foi um sucesso absoluto. Todos elogiaram!"</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">AC</div>
+                <div class="testimonial-info"><p class="testimonial-name">Ana C.</p></div>
+              </div>
+            </div>
+            <div class="testimonial-card" onclick="openTestimonialDetail(3)">
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"O Full Choco é de outro mundo. Massa crocante, recheio cremoso... perfeito!"</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">PL</div>
+                <div class="testimonial-info"><p class="testimonial-name">Pedro L.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIAL ORDERS -->
+    <section class="special-orders" id="encomendas">
+      <div class="container">
+        <div class="special-orders-inner">
+          <div class="special-orders-content">
+            <div class="special-order-badge badge-pink">❤️ Especial Dia das Mães</div>
+            <h2>Encomendas Especiais</h2>
+            <p>Precisa de algo exclusivo para um evento, presente ou empresa? Criamos caixas personalizadas com todo o cuidado que sua ocasião merece.</p>
+            <div class="special-orders-features">
+              <div class="feature-tag pink-theme" onclick="openSpecialOrderDetail('maes')">
+                <i data-lucide="heart"></i>
+                <span>Dia das Mães</span>
+              </div>
+              <div class="feature-tag" onclick="openSpecialOrderDetail('presentes')">
+                <i data-lucide="gift"></i>
+                <span>Presentes</span>
+              </div>
+              <div class="feature-tag" onclick="openSpecialOrderDetail('corporativo')">
+                <i data-lucide="briefcase"></i>
+                <span>Corporativo</span>
+              </div>
+              <div class="feature-tag" onclick="openSpecialOrderDetail('eventos')">
+                <i data-lucide="star"></i>
+                <span>Eventos</span>
+              </div>
+            </div>
+            <a href="https://api.whatsapp.com/send/?phone=5551989317331&text=Olá! Gostaria de fazer um pedido especial." class="btn btn-primary" target="_blank">Solicitar Orçamento</a>
+          </div>
+          <div class="special-orders-image">
+            <div class="floating-hearts">
+              <span>❤️</span><span>💖</span><span>🌸</span>
+            </div>
+            <img src="https://image.qwenlm.ai/public_source/eca4b3bb-c54d-4003-8e57-cf1ff110349a/15a38f7fd-f9e5-46f5-903c-5c2c9622f28a.png" alt="Caixas Especiais S&S Cookies" width="1200" height="800">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <h2 class="section-heading">Dúvidas Frequentes</h2>
+        <div class="faq-container">
+          <div class="accordion-item">
+            <div class="accordion-trigger" onclick="toggleFaq(this)">
+              <span class="accordion-question">Qual o prazo de entrega?</span>
+              <i data-lucide="plus" class="accordion-icon"></i>
+            </div>
+            <div class="accordion-panel">
+              <div class="accordion-answer">
+                Produzimos nossos cookies diariamente para garantir o máximo frescor. Pedidos feitos até as 10h costumam ser entregues no mesmo dia. Após esse horário, agendamos para o dia seguinte ou conforme sua preferência, garantindo que cheguem ainda perfumados.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-trigger" onclick="toggleFaq(this)">
+              <span class="accordion-question">Os cookies contêm glúten?</span>
+              <i data-lucide="plus" class="accordion-icon"></i>
+            </div>
+            <div class="accordion-panel">
+              <div class="accordion-answer">
+                Sim, utilizamos farinha de trigo premium em todas as nossas receitas atuais. Embora não tenhamos uma linha 100% livre de glúten no momento devido ao risco de contaminação cruzada, estamos testando novas receitas para atender a restrições futuras.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-trigger" onclick="toggleFaq(this)">
+              <span class="accordion-question">Posso personalizar as caixas?</span>
+              <i data-lucide="plus" class="accordion-icon"></i>
+            </div>
+            <div class="accordion-panel">
+              <div class="accordion-answer">
+                Com certeza! Temos diversas opções desde caixas Kraft para presentes casuais até embalagens luxuosas com laços de cetim. Para empresas ou eventos, podemos incluir cartões personalizados e adesivos com sua identidade visual ou logomarca.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-trigger" onclick="toggleFaq(this)">
+              <span class="accordion-question">Qual a validade dos cookies?</span>
+              <i data-lucide="plus" class="accordion-icon"></i>
+            </div>
+            <div class="accordion-panel">
+              <div class="accordion-answer">
+                Nossos cookies duram até 7 dias em local fresco (Red Velvet dura 5 dias). Para saboreá-los como se tivessem acabado de sair do forno, recomendamos aquecê-los por 10-15 segundos no micro-ondas. Eles também podem ser congelados por até 30 dias!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+      <div class="container">
+        <h2>Pronto para a melhor experiência?</h2>
+        <p>Não deixe para depois. Peça agora e receba o sabor da S&S Cookies no conforto da sua casa.</p>
+        <a href="https://api.whatsapp.com/send/?phone=5551989317331&text=Olá! Quero fazer um pedido!" class="btn btn-whatsapp" target="_blank">
+          <i data-lucide="message-circle"></i> Fazer Pedido Agora
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">S&S Cookies</span>
+          <p class="footer-tagline">Artesanal, Premium, Inesquecível.</p>
+        </div>
+        <div class="footer-nav">
+          <a href="#cardapio">Cardápio</a>
+          <a href="#como-funciona">Como Funciona</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#encomendas">Encomendas</a>
+        </div>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><img src="public/insta_logo.png" alt="Instagram"></a>
+        <a href="#" aria-label="WhatsApp"><img src="public/whatsapp.png" alt="WhatsApp"></a>
+        <a href="#" aria-label="Facebook"><img src="public/facebook.png" alt="Facebook"></a>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-copyright">© 2026 S&S Cookies. Todos os direitos reservados. Feito com amor em Porto Alegre.</p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://api.whatsapp.com/send/?phone=5551989317331&text=Olá! Gostaria de mais informações." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <img src="public/whatsapp.png" alt="WhatsApp" class="bg-white-icon">
+    <div class="whatsapp-float-tooltip">Fale Conosco!</div>
+    <div class="whatsapp-badge">1</div>
+  </a>
+
+  <!-- MODALS -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeAllModals()"></div>
+  <div class="modal-content" id="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="modal-body">
+      <!-- Conteúdo injetado pelo JavaScript -->
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div class="login-overlay" id="login-overlay" role="dialog" aria-modal="true">
+    <div class="login-modal" id="login-modal">
+      <button class="login-close-btn" onclick="closeLoginModal()"><i data-lucide="x"></i></button>
+      
+      <!-- VIEW: LOGIN -->
+      <div id="view-login" class="login-view active">
+        <h2 class="login-title">Bem-vindo de volta</h2>
+        <p class="login-subtitle">Acesse sua conta para gerenciar seus pedidos.</p>
+        <form onsubmit="event.preventDefault(); alert('Login simulado com sucesso!'); closeLoginModal();">
+          <div class="form-group">
+            <label for="login-email">E-mail</label>
+            <input type="email" id="login-email" placeholder="seu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="login-pass">Senha</label>
+            <input type="password" id="login-pass" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+        </form>
+        <div class="login-footer">
+          <a href="#" onclick="switchLoginView('forgot')">Esqueci minha senha</a>
+          <span>Não tem conta? <a href="#" onclick="switchLoginView('register')">Criar conta</a></span>
+        </div>
+      </div>
+
+      <!-- VIEW: REGISTER -->
+      <div id="view-register" class="login-view">
+        <h2 class="login-title">Criar sua conta</h2>
+        <p class="login-subtitle">Junte-se à família S&S Cookies.</p>
+        <form onsubmit="event.preventDefault(); alert('Conta criada com sucesso!'); switchLoginView('login');">
+          <div class="form-group">
+            <label>Nome Completo</label>
+            <input type="text" placeholder="Seu nome" required>
+          </div>
+          <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="seu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Telefone</label>
+            <input type="tel" placeholder="(00) 00000-0000" required>
+          </div>
+          <div class="form-group-row">
+            <div class="form-group">
+              <label>Senha</label>
+              <input type="password" placeholder="••••••••" required>
+            </div>
+            <div class="form-group">
+              <label>Confirmar Senha</label>
+              <input type="password" placeholder="••••••••" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+        </form>
+        <div class="login-footer">
+          <span>Já tem conta? <a href="#" onclick="switchLoginView('login')">Fazer login</a></span>
+        </div>
+      </div>
+
+      <!-- VIEW: FORGOT PASSWORD -->
+      <div id="view-forgot" class="login-view">
+        <h2 class="login-title">Recuperar Senha</h2>
+        <p class="login-subtitle">Enviaremos um código para o seu e-mail.</p>
+        <form onsubmit="event.preventDefault(); alert('Código enviado para seu e-mail!'); switchLoginView('reset');">
+          <div class="form-group">
+            <label>E-mail cadastrado</label>
+            <input type="email" placeholder="seu@email.com" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Enviar Código</button>
+        </form>
+        <div class="login-footer">
+          <a href="#" onclick="switchLoginView('login')">Voltar ao login</a>
+        </div>
+      </div>
+
+      <!-- VIEW: RESET PASSWORD -->
+      <div id="view-reset" class="login-view">
+        <h2 class="login-title">Nova Senha</h2>
+        <p class="login-subtitle">Digite o código recebido e sua nova senha.</p>
+        <form onsubmit="event.preventDefault(); alert('Senha alterada com sucesso!'); switchLoginView('login');">
+          <div class="form-group">
+            <label>Código de Verificação</label>
+            <input type="text" placeholder="123456" required class="code-input">
+          </div>
+          <div class="form-group">
+            <label>Nova Senha</label>
+            <input type="password" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Alterar Senha</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING REVIEW BUTTON (PRODUTOS) -->
+  <button class="floating-review-btn" id="floating-review-btn" onclick="openCurrentProductReview()" title="Avaliar este produto">
+    <div class="review-icon-container">
+      <i data-lucide="star"></i>
+    </div>
+    <span>Avaliar</span>
+  </button>
+
+  <!-- FLOATING LOGIN BUTTON -->
+
+  <button class="floating-login-btn" id="floating-login-btn" onclick="openLoginModal()" title="Entrar na conta">
+    <div class="login-icon-container">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-circle"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg>
+    </div>
+    <span>Login</span>
+  </button>
+
+  <!-- APPWRITE SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/appwrite@16/dist/iife/sdk.min.js"></script>
+  <script src="appwrite.js"></script>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
