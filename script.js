@@ -963,7 +963,7 @@ function updateSpecialOrdersUI() {
 function renderPage() {
   var grid = document.querySelector('.flavors-grid');
   if (grid) {
-    grid.innerHTML = Object.keys(state.flavors).map(id => {
+    var cards = Object.keys(state.flavors).map(id => {
       var f = state.flavors[id];
       return '<article class="flavor-card" style="opacity:1;transform:none" onclick="openFlavorDetail(this, \''+id+'\')">' +
                '<div class="flavor-card-image"><span class="flavor-card-tag badge-primary">'+f.tag+'</span><img src="'+f.image+'">' +
@@ -972,9 +972,50 @@ function renderPage() {
                '<div class="flavor-card-footer"><span class="flavor-card-price">'+f.price+'</span><span class="flavor-card-btn">Ver Detalhes</span></div></div>' +
              '</article>';
     }).join('');
+    
+    if (window.innerWidth < 768) {
+      grid.innerHTML = cards + cards; // Duplica para loop infinito
+    } else {
+      grid.innerHTML = cards;
+    }
+
     if (typeof lucide !== 'undefined') lucide.createIcons();
+    initAutoScroll();
   }
   updateSpecialOrdersUI();
+}
+
+let autoScrollInterval;
+function initAutoScroll() {
+  const grid = document.querySelector('.flavors-grid');
+  if (!grid || window.innerWidth >= 768) return;
+  
+  let isPaused = false;
+  clearInterval(autoScrollInterval);
+  
+  autoScrollInterval = setInterval(() => {
+    if (isPaused) return;
+    const card = grid.querySelector('.flavor-card');
+    const step = card ? card.offsetWidth + 8 : 220; // 8 is gap (var--space-sm)
+    
+    grid.scrollBy({ left: step, behavior: 'smooth' });
+
+    // Loop infinito: se passou da metade, volta pro início do primeiro conjunto
+    setTimeout(() => {
+      const half = grid.scrollWidth / 2;
+      if (grid.scrollLeft >= half - 10) {
+        grid.scrollLeft = grid.scrollLeft - half;
+      }
+    }, 600);
+  }, 3000);
+
+  const pause = () => { isPaused = true; };
+  const resume = () => { setTimeout(() => { isPaused = false; }, 3000); };
+  
+  grid.addEventListener('touchstart', pause, {passive: true});
+  grid.addEventListener('touchend', resume, {passive: true});
+  grid.addEventListener('mousedown', pause);
+  grid.addEventListener('mouseup', resume);
 }
 
 var loginOverlay = document.getElementById('login-overlay');
