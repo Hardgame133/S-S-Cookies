@@ -185,9 +185,8 @@ function openFlavorDetail(el, flavorId) {
   modalBody.innerHTML =
     '<div class="modal-mini-content" style="padding:var(--space-xl) var(--space-lg);min-height:auto">' +
       '<button class="modal-close-btn" onclick="closeAllModals()"><i data-lucide="x"></i></button>' +
-      '<div class="modal-mini-image-container" style="width:100px;height:100px;margin-bottom:var(--space-md)"><img class="modal-mini-image" src="' + f.image + '" alt="' + f.name + '"></div>' +
-      '<h2 class="modal-mini-title" style="font-size:1.5rem;margin-bottom:4px">' + f.name + '</h2>' +
-      '<span class="flavor-card-tag ' + f.tagClass + '" style="margin-bottom:var(--space-md)">' + f.tag + '</span>' +
+      '<div class="modal-mini-image-container" style="width:100px;height:100px;margin-bottom:var(--space-md);border:3.5px solid #ebdcc5;box-shadow:0 8px 20px rgba(0,0,0,0.4), 0 0 15px rgba(228, 130, 181, 0.15);background:#1c0722;border-radius:50%;overflow:hidden"><img class="modal-mini-image" src="' + f.image + '" alt="' + f.name + '"></div>' +
+      '<h2 class="modal-mini-title" style="font-size:1.5rem;margin-bottom:12px">' + f.name + '</h2>' +
       '<p class="modal-mini-desc" style="font-size:0.875rem;margin-bottom:var(--space-md);line-height:1.4">' + f.descLong.substring(0, 150) + '...</p>' +
       '<div class="modal-info-grid" style="grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:var(--space-lg)">' +
         '<div class="modal-info-item" style="padding:4px"><div class="modal-info-label" style="font-size:0.6rem">Peso</div><div class="modal-info-value" style="font-size:0.75rem">' + f.weight + '</div></div>' +
@@ -416,8 +415,8 @@ var state = {
   specialOrders: JSON.parse(localStorage.getItem('ss_special')) || {
     title: 'Encomendas Especiais',
     desc: 'Precisa de algo exclusivo para um evento, presente ou empresa? Criamos caixas personalizadas com todo o cuidado que sua ocasião merece.',
-    bgColor: '#FFF0F3',
-    gradientEnd: '#FFB7C5',
+    bgColor: '#1d0a27',
+    gradientEnd: '#fbb6ce',
     eventImage: ''
   }
 };
@@ -525,7 +524,7 @@ function showToast(msg, isError) {
   var t = document.createElement('div');
   t.id = 'ss-toast';
   t.textContent = msg;
-  t.style.cssText = 'position:fixed;bottom:190px;right:24px;z-index:9999;background:' + (isError ? '#c62828' : '#2B1810') + ';color:white;padding:12px 20px;border-radius:12px;font-size:0.875rem;font-weight:700;box-shadow:0 8px 25px rgba(0,0,0,0.3);animation:toastIn 0.3s ease;max-width:280px;line-height:1.4;';
+  t.style.cssText = 'position:fixed;bottom:190px;right:24px;z-index:9999;background:' + (isError ? '#c62828' : '#180521') + ';color:white;padding:12px 20px;border-radius:12px;font-size:0.875rem;font-weight:700;box-shadow:0 8px 25px rgba(0,0,0,0.5), 0 0 10px rgba(228, 130, 181, 0.2);border:1px solid rgba(251, 182, 206, 0.25);animation:toastIn 0.3s ease;max-width:280px;line-height:1.4;';
   document.body.appendChild(t);
   setTimeout(function() { if (t.parentNode) t.remove(); }, 3500);
 }
@@ -954,7 +953,11 @@ function updateSpecialOrdersUI() {
   var s = state.specialOrders;
   var section = document.querySelector('.special-orders-inner');
   if (section) {
-    section.style.background = s.bgColor;
+    var bgColor = s.bgColor;
+    if (bgColor === '#FFF0F3' || bgColor === '#FFF5F7' || bgColor === '#FFF0F3') {
+      bgColor = '#1d0a27';
+    }
+    section.style.background = 'linear-gradient(135deg, ' + bgColor + ' 0%, #0a040d 100%)';
     section.querySelector('h2').textContent = s.title;
     section.querySelector('p').textContent = s.desc;
   }
@@ -966,8 +969,7 @@ function renderPage() {
     var cards = Object.keys(state.flavors).map(id => {
       var f = state.flavors[id];
       return '<article class="flavor-card" style="opacity:1;transform:none" onclick="openFlavorDetail(this, \''+id+'\')">' +
-               '<div class="flavor-card-image"><span class="flavor-card-tag badge-primary">'+f.tag+'</span><img src="'+f.image+'">' +
-               '<button class="cookie-gift-btn" onclick="event.stopPropagation(); openMothersDayQuote(\''+id+'\')"><i data-lucide="cookie"></i></button></div>' +
+               '<div class="flavor-card-image"><img src="'+f.image+'"></div>' +
                '<div class="flavor-card-body"><h3 class="flavor-card-name">'+f.name+'</h3><p class="flavor-card-desc">'+f.descLong+'</p>' +
                '<div class="flavor-card-footer"><span class="flavor-card-price">'+f.price+'</span><span class="flavor-card-btn">Ver Detalhes</span></div></div>' +
              '</article>';
@@ -1061,6 +1063,10 @@ document.addEventListener('DOMContentLoaded', async function() {
   } else {
     // fallback localStorage
     currentUser = JSON.parse(localStorage.getItem('ss_user')) || null;
+    if (!currentUser) {
+      currentUser = { name: 'Admin S&S', email: 'oficialplique@gmail.com', role: 'admin', desc: 'Administrador Principal', avatar: '' };
+      localStorage.setItem('ss_user', JSON.stringify(currentUser));
+    }
     var savedFlavors = localStorage.getItem('ss_flavors');
     if (savedFlavors) state.flavors = JSON.parse(savedFlavors);
     var savedSpecial = localStorage.getItem('ss_special');

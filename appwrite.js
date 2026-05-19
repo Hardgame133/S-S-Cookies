@@ -3,7 +3,7 @@
 // ============================================================
 var APPWRITE_CONFIG = {
   endpoint:   'https://sfo.cloud.appwrite.io/v1',
-  projectId:  '69f0f581003cc24b99e2',
+  projectId:  '', // '69f0f581003cc24b99e2' (Pausado por inatividade no console Appwrite)
   databaseId: '69f0f96600256e20bff0',   // ← sem espaço no final
   collections: {
     flavors:       'flavors',
